@@ -10,10 +10,10 @@ Add quad-tween as a dependency to Cargo.toml:
 quad_tween = { git = "https://github.com/xLin7648/quad-tween.git" }
 ```
 
-#### First introduce the library
+#### First add the library
 
 ```rust
-	use quad_tween::*
+use quad_tween::*
 ```
 
 #### Then create an animation
