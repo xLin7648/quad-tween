@@ -10,7 +10,7 @@ Add quad-tween as a dependency to Cargo.toml:
 quad-tween = { git = "https://github.com/xLin7648/quad-tween.git" }
 ```
 
-#### First add the library
+#### add the library
 
 ```rust
 use quad_tween::*;
