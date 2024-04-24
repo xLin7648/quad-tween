@@ -7,13 +7,13 @@ Add quad-tween as a dependency to Cargo.toml:
 ```toml
 
 [dependencies]
-quad_tween = { git = "https://github.com/xLin7648/quad-tween.git" }
+quad-tween = { git = "https://github.com/xLin7648/quad-tween.git" }
 ```
 
 #### First add the library
 
 ```rust
-use quad_tween::*
+use quad_tween::*;
 ```
 
 #### Then create an animation
@@ -25,7 +25,7 @@ points.push(vec2(800. , 600.));
 points.push(vec2(1200., 200.));
 points.push(vec2(800. , 200.));
 
-let tween: Tween<Vec2> = Tween::<Vec2>::new(
+let mut tween: Tween<Vec2> = Tween::<Vec2>::new(
     Ease::InOutExpo,
     true, // isloop?
     1.5,  // total time,
@@ -38,7 +38,7 @@ let tween: Tween<Vec2> = Tween::<Vec2>::new(
 loop {
     clear_background(BLUE);
 
-    tween.update(|tw| {
+    tween.update(get_frame_time(), |tw| {
         draw_circle(tw.points[0].x , tw.points[0].y , 20., BLACK);
         draw_circle(tw.points[1].x , tw.points[1].y , 20., WHITE);
         draw_circle(tw.points[2].x , tw.points[2].y , 20., BLACK);

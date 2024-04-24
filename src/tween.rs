@@ -1,6 +1,7 @@
+use glam::{Vec2, Vec3};
+
 use crate::lerp::*;
 use crate::ease::*;
-use macroquad::prelude::*;
 
 pub trait DefaultValue {
     fn zero() -> Self;
@@ -46,11 +47,11 @@ where
         }
     }
 
-    pub fn update(&mut self, work: impl Fn(&mut Tween<T>)) {
+    pub fn update(&mut self, frame_time: f32, work: impl Fn(&mut Tween<T>)) {
         work(self);
         
         if self.timer < self.total_time {
-            self.timer += get_frame_time();
+            self.timer += frame_time;
             let t = f32::clamp(self.timer / self.total_time, 0., 1.);
 
             // 根据插值移动物体

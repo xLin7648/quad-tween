@@ -1,4 +1,4 @@
-use macroquad::math::{vec2, vec3, Vec2, Vec3};
+use glam::{vec2, vec3, Vec2, Vec3};
 
 pub fn i32_lerp(start: i32, end: i32, t: i32) -> i32 {
     start + (end - start) * t
